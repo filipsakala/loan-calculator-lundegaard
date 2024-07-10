@@ -1,0 +1,45 @@
+.slider-ui {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+}
+
+.slider-ui::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14.150559mm;
+  height: 8.7908993mm;
+  background: url("slider.svg");
+  background-origin: padding-box;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border: none;
+}
+.slider-ui::-webkit-slider-runnable-track {
+  appearance: none;
+  -webkit-appearance: none;
+
+  /* allow thumb to move out of the box */
+  margin: 0 -20px;
+}
+
+/* the same for Mozilla*/
+.slider-ui::-moz-range-progress {
+  background-color: #00fc8f;
+}
+
+.slider-ui::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14.150559mm;
+  height: 8.7908993mm;
+  background: url("slider.svg");
+  background-origin: padding-box;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border: none;
+}
