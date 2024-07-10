@@ -1,6 +1,8 @@
-import formatAmountWithCurrency from "@/utils/formatAmountWithCurrency";
+import formatNumber from "@/utils/formatNumber";
 import Slider from "../Slider";
 import styles from "./SliderInput.module.css";
+import CurrencyInput from "../CurrencyInput";
+import { InputHTMLAttributes } from "react";
 
 type Props = {
   label: string;
@@ -9,6 +11,7 @@ type Props = {
   value: number;
   valueLabel: string;
   inputLabel?: string;
+  sliderProps?: InputHTMLAttributes<HTMLInputElement>;
 };
 
 const SliderInput = ({
@@ -18,30 +21,34 @@ const SliderInput = ({
   label,
   valueLabel,
   inputLabel,
+  sliderProps,
 }: Props) => {
   return (
     <div className={styles.sliderInput}>
       <div className={styles.sliderWrapper}>
         <label className={styles.sliderLabel}>
-          <div>{label}</div>
-          <Slider min={min} max={max} style={{ width: "100%" }} />
+          <div className={styles.label}>{label}</div>
+          <Slider
+            {...sliderProps}
+            min={min}
+            max={max}
+            style={{ width: "100%" }}
+          />
           <div className={styles.valueLabels}>
             <div className={styles.minValue}>
-              {formatAmountWithCurrency(min)}
+              {formatNumber(min)} {valueLabel}
             </div>
             <div className={styles.maxValue}>
-              {formatAmountWithCurrency(max)}
+              {formatNumber(max)} {valueLabel}
             </div>
           </div>
         </label>
       </div>
-      <div className={styles.inputWrapper}>
-        <label className={styles.inputLabel}>
-          <input type="number" value={value}></input>
-          {valueLabel}
-          <div className={styles.inputLabel}>{inputLabel}</div>
-        </label>
-      </div>
+      <CurrencyInput
+        valueLabel={valueLabel}
+        inputLabel={inputLabel}
+        inputProps={{ value, size: String(max).length }}
+      />
     </div>
   );
 };

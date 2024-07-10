@@ -1,22 +1,23 @@
 .sliderInput {
   display: flex;
   flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
 }
 .sliderWrapper {
-  flex: 4;
+  flex: 3;
 }
 
 .sliderLabel {
   color: #140757;
   font-size: small;
 }
-
-.slider {
+.label {
+  margin-bottom: 5px;
 }
 
 .minValue,
-.maxValue,
-.inputLabel {
+.maxValue {
   color: #767e88;
   font-size: xx-small;
 }
@@ -27,10 +28,4 @@
 
 .maxValue {
   float: right;
-}
-
-.inputWrapper {
-  flex: 1;
-}
-.inputLabel {
 }

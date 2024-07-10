@@ -1,0 +1,39 @@
+.inputWrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.valueLabel {
+  color: #44484e;
+  font-size: xx-small;
+  font-weight: bold;
+}
+
+.inputLabel {
+  color: #767e88;
+  font-size: xx-small;
+  min-width: 19ch;
+  font-weight: normal;
+}
+
+.input {
+  appearance: initial;
+  -moz-appearance: textfield;
+
+  background-color: white;
+  color: #140757;
+  padding: 4px;
+  border: 1px solid #b8c6d6;
+  width: 10ch;
+
+  &:focus,
+  &:hover {
+    border: 1px solid #767e88;
+  }
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

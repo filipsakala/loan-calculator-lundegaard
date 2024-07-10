@@ -1,6 +1,9 @@
-const formatAmountWithCurrency = (value: number): string => {
+const formatAmountWithCurrency = (
+  value: number,
+  style: "currency" | "decimal" = "decimal"
+): string => {
   return new Intl.NumberFormat("cs", {
-    style: "currency",
+    style,
     currency: "CZK",
     maximumFractionDigits: 0,
   }).format(value);
