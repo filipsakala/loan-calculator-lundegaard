@@ -1,0 +1,36 @@
+.sliderInput {
+  display: flex;
+  flex-wrap: wrap;
+}
+.sliderWrapper {
+  flex: 4;
+}
+
+.sliderLabel {
+  color: #140757;
+  font-size: small;
+}
+
+.slider {
+}
+
+.minValue,
+.maxValue,
+.inputLabel {
+  color: #767e88;
+  font-size: xx-small;
+}
+
+.minValue {
+  float: left;
+}
+
+.maxValue {
+  float: right;
+}
+
+.inputWrapper {
+  flex: 1;
+}
+.inputLabel {
+}
