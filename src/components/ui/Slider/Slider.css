@@ -11,8 +11,8 @@
 .slider-ui::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 14.150559mm;
-  height: 8.7908993mm;
+  width: 31.841928px;
+  height: 20.210859px;
   background: url("slider.svg");
   background-origin: padding-box;
   background-repeat: no-repeat;
@@ -24,7 +24,7 @@
   -webkit-appearance: none;
 
   /* allow thumb to move out of the box */
-  margin: 0 -20px;
+  margin: 0 -10px;
 }
 
 /* the same for Mozilla*/
@@ -35,8 +35,8 @@
 .slider-ui::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 14.150559mm;
-  height: 8.7908993mm;
+  width: 31.841928px;
+  height: 20.210859px;
   background: url("slider.svg");
   background-origin: padding-box;
   background-repeat: no-repeat;
