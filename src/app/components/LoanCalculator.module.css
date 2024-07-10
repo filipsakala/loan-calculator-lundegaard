@@ -1,8 +1,61 @@
-.wrapper {
+.calculator {
   background-color: white;
+  padding: 10px;
+
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  min-height: 250px;
+}
+
+.inputsWrapper {
+  flex: 2;
 }
 
 .title {
   color: #140757;
   font-size: medium;
+}
+
+.calculationWrapper {
+  flex: 1;
+  max-width: 250px;
+  background-color: #140757;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  text-align: center;
+}
+
+.monthlyPaymentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.monthlyPaymentTitle {
+  font-size: small;
+  font-weight: bold;
+}
+
+.monthlyPaymentAmount {
+  font-size: xx-large;
+  font-weight: 300;
+}
+
+.calculationActionCall {
+  display: flex;
+  gap: 1ch;
+  justify-content: center;
+
+  .calculationActionCallIcon {
+    filter: invert(50%);
+  }
+
+  .calculationActionCallTitle {
+    text-decoration: underline;
+    font-size: x-small;
+  }
 }
