@@ -1,0 +1,15 @@
+.button-ui {
+  padding: 10px;
+  font-size: x-small;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+  background-color: #3fb360;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #318a4a;
+  }
+}

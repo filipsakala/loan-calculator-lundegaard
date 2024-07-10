@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./LoanCalculator.module.css";
+import Button from "@/components/ui/Button";
 
 const LoanCalculator = () => {
   return (
@@ -13,7 +14,7 @@ const LoanCalculator = () => {
           <div className={styles.monthlyPaymentAmount}>1 358 Kč</div>
         </div>
         <div className={styles.monthlyPaymentWrapper}>
-          <div>Pokračovat...</div>
+          <Button>Pokračovat</Button>
           <div className={styles.calculationActionCall}>
             <Image
               className={styles.calculationActionCallIcon}
