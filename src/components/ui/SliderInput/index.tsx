@@ -30,6 +30,7 @@ const SliderInput = ({
           <div className={styles.label}>{label}</div>
           <Slider
             {...sliderProps}
+            value={value}
             min={min}
             max={max}
             style={{ width: "100%" }}
@@ -47,7 +48,11 @@ const SliderInput = ({
       <CurrencyInput
         valueLabel={valueLabel}
         inputLabel={inputLabel}
-        inputProps={{ value, size: String(max).length }}
+        inputProps={{
+          value,
+          size: String(max).length,
+          onChange: sliderProps?.onChange,
+        }}
       />
     </div>
   );
