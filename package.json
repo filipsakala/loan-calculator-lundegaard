@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "dev": "yarn concurrently  \"yarn workspace client dev\" \"yarn workspace server dev\"",
-    "test": "yarn workspace client test"
+    "test": "yarn workspace client test",
+    "lint": "yarn workspace client lint"
   },
   "dependencies": {
     "concurrently": "^8.2.2"

@@ -1,4 +1,10 @@
 import express from "express";
+import {
+  MAX_LOAN_AMOUNT,
+  MAX_LOAN_LENGTH,
+  MIN_LOAN_AMOUNT,
+  MIN_LOAN_LENGTH,
+} from "./consts";
 const LoanCalc = require("loan-calc");
 
 const router = express.Router();
@@ -6,12 +12,22 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   const { amount, length, withInsurance } = req.query;
 
-  if (!amount || !Number(amount) || Number(amount) <= 0) {
+  if (
+    !amount ||
+    !Number(amount) ||
+    Number(amount) < MIN_LOAN_AMOUNT ||
+    Number(amount) > MAX_LOAN_AMOUNT
+  ) {
     res.status(400).json({ errorMessage: "Wrong input params: amount" });
     return;
   }
 
-  if (!length || !Number(length) || Number(length) <= 0) {
+  if (
+    !length ||
+    !Number(length) ||
+    Number(length) < MIN_LOAN_LENGTH ||
+    Number(length) > MAX_LOAN_LENGTH
+  ) {
     res.status(400).json({ errorMessage: "Wrong input params: length" });
     return;
   }

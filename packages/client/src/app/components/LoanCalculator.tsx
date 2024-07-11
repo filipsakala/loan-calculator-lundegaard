@@ -10,8 +10,7 @@ const LoanCalculator = () => {
         <CalculatorInput />
         <p className={styles.notes}>
           Úroková sazba od <b>6,90%</b>, RPSN od <b>7,11%</b>, pojištění{" "}
-          <b>0 Kč/měsíčně</b>, poplatek za sjednání online <b>0 Kč</b>, celkem
-          zaplatíte <b>130 406,44 Kč</b>
+          <b>0 Kč/měsíčně</b>, poplatek za sjednání online <b>0 Kč</b>.
         </p>
         <p className={styles.notes}>
           Výše uvedené splátky je pouze orientační a od výsledné schválené výše

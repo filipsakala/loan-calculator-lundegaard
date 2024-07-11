@@ -1,16 +1,32 @@
+"use client";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import formatNumber from "@/utils/formatNumber";
 import styles from "./CalculatorResult.module.css";
+import usePaymentAmount from "../hooks/usePaymentAmount";
+import { useRecoilValue } from "recoil";
+import {
+  isErrorPaymentAtom,
+  isLoadingPaymentAtom,
+  paymentAtom,
+} from "@/store/atoms";
 
 const CalculatorResult = () => {
+  usePaymentAmount();
+  const payment = useRecoilValue(paymentAtom);
+  const isLoading = useRecoilValue(isLoadingPaymentAtom);
+  const isError = useRecoilValue(isErrorPaymentAtom);
+
   return (
     <>
-      {" "}
       <div className={styles.monthlyPaymentWrapper}>
         <div className={styles.monthlyPaymentTitle}>Měsíčně zaplatíte</div>
         <div className={styles.monthlyPaymentAmount}>
-          {formatNumber(1358, "currency")}
+          {isLoading && "počítám..."}
+          {!isLoading && isError && "chyba :("}
+          {!isLoading && !isError && payment
+            ? formatNumber(payment, "currency")
+            : ""}
         </div>
       </div>
       <div className={styles.monthlyPaymentWrapper}>

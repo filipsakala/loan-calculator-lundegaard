@@ -8,6 +8,12 @@ import {
   updateLength,
 } from "@/store/features/calculator/calculatorSlice";
 import RadioGroup from "@/components/ui/RadioGroup";
+import {
+  MAX_LOAN_AMOUNT,
+  MAX_LOAN_LENGTH,
+  MIN_LOAN_AMOUNT,
+  MIN_LOAN_LENGTH,
+} from "../consts";
 
 const CalculatorInput = () => {
   const amount = useSelector((state: RootState) => state.calculator.amount);
@@ -21,8 +27,8 @@ const CalculatorInput = () => {
   return (
     <>
       <SliderInput
-        min={20000}
-        max={800000}
+        min={MIN_LOAN_AMOUNT}
+        max={MAX_LOAN_AMOUNT}
         sliderProps={{
           step: 10000,
           onChange: (e) => dispatch(updateAmount(e.target.value)),
@@ -32,8 +38,8 @@ const CalculatorInput = () => {
         valueLabel="Kč"
       />
       <SliderInput
-        min={24}
-        max={96}
+        min={MIN_LOAN_LENGTH}
+        max={MAX_LOAN_LENGTH}
         sliderProps={{
           step: 6,
           onChange: (e) => dispatch(updateLength(e.target.value)),

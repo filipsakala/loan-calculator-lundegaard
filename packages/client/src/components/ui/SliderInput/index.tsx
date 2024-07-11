@@ -52,6 +52,8 @@ const SliderInput = ({
           value,
           size: String(max).length,
           onChange: sliderProps?.onChange,
+          min,
+          max,
         }}
       />
     </div>
