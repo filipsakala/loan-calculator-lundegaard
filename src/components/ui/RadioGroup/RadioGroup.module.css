@@ -1,0 +1,21 @@
+.radioGroup {
+  color: #140757;
+}
+
+.label {
+  font-size: small;
+  margin-bottom: 10px;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.radio {
+  accent-color: #00fc8f;
+}
+
+.radioLabel {
+  font-size: x-small;
+}
