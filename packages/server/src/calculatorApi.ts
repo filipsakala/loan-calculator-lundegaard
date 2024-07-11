@@ -1,4 +1,5 @@
 import express from "express";
+const LoanCalc = require("loan-calc");
 
 const router = express.Router();
 
@@ -21,7 +22,13 @@ router.get("/", async (req, res) => {
   }
 
   try {
-    res.status(200).json(0);
+    const paymentAmount = LoanCalc.paymentCalc({
+      amount,
+      rate: withInsurance === "true" ? 5 : 6.9,
+      termMonths: length,
+    });
+
+    res.status(200).json(paymentAmount);
   } catch (error) {
     console.error(error);
     res.status(500).json({
